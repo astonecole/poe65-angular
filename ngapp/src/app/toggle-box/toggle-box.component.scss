@@ -1,0 +1,19 @@
+:host {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.toggle-box-title {
+    font-size: 18px;
+    margin: 5px;
+}
+
+.toggle-box-title:hover {
+    cursor: pointer;
+}
+
+.toggle-box-body {
+    margin: 0 5px;
+}

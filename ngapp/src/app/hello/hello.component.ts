@@ -15,7 +15,16 @@ export class HelloComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
+  }
+
+  onSave(event: Event) {
+    console.log(event);
+    alert(this.name);
+  }
+
+  getName(): string {
+    return this.name;
   }
 
 }
