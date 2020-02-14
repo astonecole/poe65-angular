@@ -1,9 +1,7 @@
 <div>
     <h2 class="toggle-box-title" (click)="state=!state">{{ title }}</h2>
+    {{ state }}
     <div class="toggle-box-body" [hidden]="state">
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Assumenda, voluptates.
-        </p>
+        <ng-content></ng-content>
     </div>
 </div>

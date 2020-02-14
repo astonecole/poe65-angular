@@ -1,7 +1,19 @@
 <h1>{{ title }}</h1>
 
-<app-toggle-box></app-toggle-box>
-<app-toggle-box></app-toggle-box>
+<app-toggle-box title="Titre de ma boite" toggle="true">
+    <p>Ici mon contenu</p>
+</app-toggle-box>
+
+<app-toggle-box toggle="true">
+    <img src="https://i.ytimg.com/vi/Bzszo7_t-mc/maxresdefault.jpg" width="400px">
+</app-toggle-box>
+
+<app-toggle-box toggle="false">
+    <div>
+        <h4>Sub Title</h4>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</app-toggle-box>
 
 <app-hello></app-hello>
 <!-- <div app-hello=""></div> -->

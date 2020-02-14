@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-toggle-box',
@@ -6,11 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toggle-box.component.scss']
 })
 export class ToggleBoxComponent implements OnInit {
-  title: string = 'Untitiled';
-  state: boolean = false;
+  @Input() title: string = 'Untitled';
+  @Input('toggle') state: boolean | string;
 
   constructor() { }
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {
+    if (this.state === 'true') {
+      this.state = true;
+    } else if (this.state === 'false') {
+      this.state = false;
+    } else {
+      this.state = false;
+    }
+  }
 }
