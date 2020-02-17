@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Yeoman';
+  title = 'Angular';
+  tasks: string[] = [];
+
+  addToList(task: string) {
+    this.tasks.push(task);
+  }
 }

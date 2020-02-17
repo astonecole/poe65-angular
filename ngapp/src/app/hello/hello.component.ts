@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 
 /**
  * selector: app-hello | [app-hello] | .app-hello
@@ -11,20 +11,20 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
   name: string = '';
+  @Output() valueEvent = new EventEmitter<string>();
 
   constructor() { }
-
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void { }
 
   onSave(event: Event) {
-    console.log(event);
-    alert(this.name);
-  }
+    const evt = event as KeyboardEvent;
 
-  getName(): string {
-    return this.name;
+    if (evt.keyCode === 13) {
+      const input = event.target as HTMLInputElement;
+      if (input.value) {
+        this.valueEvent.emit(input.value);
+        input.value = '';
+      }
+    }
   }
-
 }

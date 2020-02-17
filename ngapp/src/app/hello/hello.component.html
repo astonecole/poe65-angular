@@ -1,15 +1,13 @@
-<h2>Hello, World!</h2>
-
 <div>
-
   <input type="text"
+    #inputName
+    maxLength="20"
+    (keyup)="onSave($event)"
     [(ngModel)]="name"
     style="border: 1px solid #ccc"
-    [style.borderColor]="name.length >= 5 ? 'red' : 'green'">
-    {{ name }} {{ getName() }}
+    [style.borderColor]="name.length >= inputName.maxLength ? 'red' : 'green'">
 
-  <br>
-  <div textContent="{{ name }}"></div>
-  <button [disabled]="!name.length" (click)="onSave($event)">Press Me</button>
+    <br>
 
+    {{ inputName.value.length }}/{{ inputName.maxLength }}
 </div>

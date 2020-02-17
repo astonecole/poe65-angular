@@ -1,6 +1,15 @@
 <h1>{{ title }}</h1>
 
-<app-toggle-box title="Titre de ma boite" toggle="true">
+<app-hello (valueEvent)="addToList($event)"></app-hello>
+
+<ul>
+    <li *ngFor="let value of tasks; let $index">{{ $index }} {{ value }}</li>
+</ul>
+
+<!-- <div app-hello=""></div> -->
+<!-- <div class="app-hello"></div> -->
+
+<!-- <app-toggle-box title="Titre de ma boite" toggle="true">
     <p>Ici mon contenu</p>
 </app-toggle-box>
 
@@ -8,13 +17,9 @@
     <img src="https://i.ytimg.com/vi/Bzszo7_t-mc/maxresdefault.jpg" width="400px">
 </app-toggle-box>
 
-<app-toggle-box toggle="false">
+<app-toggle-box toggle="true">
     <div>
         <h4>Sub Title</h4>
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
-</app-toggle-box>
-
-<app-hello></app-hello>
-<!-- <div app-hello=""></div> -->
-<!-- <div class="app-hello"></div> -->
+</app-toggle-box> -->
