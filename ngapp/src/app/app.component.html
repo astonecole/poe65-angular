@@ -1,6 +1,13 @@
 <h1>{{ title }}</h1>
 
+<button appButton>Click Me</button>
+
+
+<app-palette></app-palette>
+
 <app-hello (valueEvent)="addToList($event)"></app-hello>
+
+<input #focusInput type="text">
 
 <ul>
     <li *ngFor="let value of tasks; let $index">{{ $index }} {{ value }}</li>

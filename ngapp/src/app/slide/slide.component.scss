@@ -1,0 +1,15 @@
+.slide {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slide input[type="range"] {
+    margin: 8px;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.slide input[type="number"] {
+    width: 3em;
+    padding: 2px;
+}
