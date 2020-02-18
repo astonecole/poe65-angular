@@ -10,6 +10,11 @@ import { PaletteComponent } from './palette/palette.component';
 import { SlideComponent } from './slide/slide.component';
 import { ButtonDirective } from './directives/button.directive';
 import { TwoWayDatabindingComponent } from './two-way-databinding/two-way-databinding.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DemoComponent } from './demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { TwoWayDatabindingComponent } from './two-way-databinding/two-way-databi
     PaletteComponent,
     SlideComponent,
     ButtonDirective,
-    TwoWayDatabindingComponent
+    TwoWayDatabindingComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    NavbarComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,

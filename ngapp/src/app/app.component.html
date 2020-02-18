@@ -1,41 +1,5 @@
-<h1>{{ title }}</h1>
+<app-navbar></app-navbar>
 
-<app-two-way-databinding></app-two-way-databinding>
-
-
-
-
-
-
-
-
-<!-- <button appButton>Click Me</button>
-<a href="" appButton>Click Me</a> -->
-
-<!-- <app-palette></app-palette>
-
-<app-hello (valueEvent)="addToList($event)"></app-hello>
-
-<input #focusInput type="text">
-
-<ul>
-    <li *ngFor="let value of tasks; let $index">{{ $index }} {{ value }}</li>
-</ul> -->
-
-<!-- <div app-hello=""></div> -->
-<!-- <div class="app-hello"></div> -->
-
-<!-- <app-toggle-box title="Titre de ma boite" toggle="true">
-    <p>Ici mon contenu</p>
-</app-toggle-box>
-
-<app-toggle-box toggle="true">
-    <img src="https://i.ytimg.com/vi/Bzszo7_t-mc/maxresdefault.jpg" width="400px">
-</app-toggle-box>
-
-<app-toggle-box toggle="true">
-    <div>
-        <h4>Sub Title</h4>
-        <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-</app-toggle-box> -->
+<main class="container">
+    <router-outlet></router-outlet>
+</main>
