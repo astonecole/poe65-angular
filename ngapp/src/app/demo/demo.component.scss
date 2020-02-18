@@ -1,11 +1,29 @@
+// .demo {
+//     display: grid;
+//     grid-template-columns: auto auto auto;
+//     gap: 20px;
+// }
+
+// .demo > * {
+//     border: 1px solid #999;
+//     border-radius: 2px;
+//     padding: 20px;
+// }
+
 .demo {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 20px;
+  column-count: 3;
+  column-gap: 1em;
 }
 
 .demo > * {
-    border: 1px solid #999;
-    border-radius: 2px;
-    padding: 20px;
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
 }

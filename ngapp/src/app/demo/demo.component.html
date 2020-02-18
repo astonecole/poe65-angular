@@ -1,4 +1,7 @@
 <div class="demo">
+
+    <app-chuckquote></app-chuckquote>
+
     <app-palette></app-palette>
     <app-two-way-databinding></app-two-way-databinding>
 
@@ -6,7 +9,7 @@
         <button appButton>Click Me</button>
         <a href="" appButton>Click Me</a>
     </div>
-
+    
     <div>
         <app-hello (valueEvent)="addToList($event)"></app-hello>
         <ul>
@@ -14,19 +17,25 @@
         </ul>
     </div>
 
-    <!-- <input #focusInput type="text">
-    <div app-hello=""></div>
+    <app-palette></app-palette>
+
+    <div>
+        <input #focusInput type="text">
+    </div>
+
+    <!-- <div app-hello=""></div>
     <div class="app-hello"></div> -->
 
-    <app-toggle-box title="Titre de ma boite" toggle="true">
+    <app-toggle-box title="Titre de ma boite" toggle="false">
         <p>Ici mon contenu</p>
     </app-toggle-box>
 
-    <app-toggle-box toggle="true">
+    <app-toggle-box title="Business Cat" toggle="false">
         <img src="https://i.ytimg.com/vi/Bzszo7_t-mc/maxresdefault.jpg" width="400px">
+        <div>Un chat dans le Game</div>
     </app-toggle-box>
 
-    <app-toggle-box toggle="true">
+    <app-toggle-box toggle="false">
         <div>
             <h4>Sub Title</h4>
             <p>Lorem ipsum dolor sit amet.</p>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DemoComponent } from './demo/demo.component';
+import { ChuckquoteComponent } from './chuckquote/chuckquote.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +31,13 @@ import { DemoComponent } from './demo/demo.component';
     AboutComponent,
     ContactComponent,
     NavbarComponent,
-    DemoComponent
+    DemoComponent,
+    ChuckquoteComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
