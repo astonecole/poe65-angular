@@ -1,4 +1,4 @@
-<app-slide *ngFor="let slide of [0,0,0]; let i = index"
+<app-slide label="r" *ngFor="let slide of [0,0,0]; let i = index"
     max="255" (onChange)="onUpdate({ color: $event, index: i})"></app-slide>
 
 <div class="palette-color" [style.backgroundColor]="toString()"></div>

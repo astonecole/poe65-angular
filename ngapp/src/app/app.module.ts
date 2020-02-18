@@ -9,6 +9,7 @@ import { ToggleBoxComponent } from './toggle-box/toggle-box.component';
 import { PaletteComponent } from './palette/palette.component';
 import { SlideComponent } from './slide/slide.component';
 import { ButtonDirective } from './directives/button.directive';
+import { TwoWayDatabindingComponent } from './two-way-databinding/two-way-databinding.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ButtonDirective } from './directives/button.directive';
     ToggleBoxComponent,
     PaletteComponent,
     SlideComponent,
-    ButtonDirective
+    ButtonDirective,
+    TwoWayDatabindingComponent
   ],
   imports: [
     BrowserModule,

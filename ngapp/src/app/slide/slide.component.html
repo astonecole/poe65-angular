@@ -1,4 +1,5 @@
 <div class="slide">
+    <span>{{ label }}</span>
     <input (input)="onSlide()" type="range" [min]="min" [max]="max" [(ngModel)]="colorValue">
     <input (input)="onSlide()" type="number" [min]="min" [max]="max" placeholder="red" [(ngModel)]="colorValue">
 </div>
