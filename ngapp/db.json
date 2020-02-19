@@ -1,0 +1,29 @@
+{
+  "articles": [
+    {
+      "title": "titre de mon article",
+      "content": "Il était une fois ma vie...",
+      "id": 1
+    },
+    {
+      "title": "titre de mon article",
+      "content": "Il était une fois ma vie...",
+      "id": 2
+    },
+    {
+      "title": "titre de mon article",
+      "content": "Il était une fois ma vie...",
+      "id": 3
+    },
+    {
+      "title": "titre de mon article",
+      "content": "Il était une fois ma vie...",
+      "id": 4
+    },
+    {
+      "title": "titre de mon article",
+      "content": "Il était une fois ma vie...",
+      "id": 5
+    }
+  ]
+}

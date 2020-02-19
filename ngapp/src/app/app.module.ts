@@ -18,6 +18,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DemoComponent } from './demo/demo.component';
 import { ChuckquoteComponent } from './chuckquote/chuckquote.component';
 import { FlashMessengerComponent } from './flash-messenger/flash-messenger.component';
+import { ArticleFormComponent } from './blog/article-form/article-form.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FlashMessengerComponent } from './flash-messenger/flash-messenger.compo
     NavbarComponent,
     DemoComponent,
     ChuckquoteComponent,
-    FlashMessengerComponent
+    FlashMessengerComponent,
+    ArticleFormComponent
   ],
   imports: [
     BrowserModule,

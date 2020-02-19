@@ -1,4 +1,5 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
+import { FlashMessengerService } from '../flash-messenger.service';
 
 @Directive({
   selector: '[appButton]'
@@ -6,7 +7,7 @@ import { Directive, ElementRef, HostListener } from '@angular/core';
 export class ButtonDirective {
   button: HTMLElement;
 
-  constructor(elem: ElementRef) {
+  constructor(private messageService: FlashMessengerService, elem: ElementRef) {
     this.button = elem.nativeElement; // === document.querySelector('button');
     this.resetStyles();
   }
@@ -30,6 +31,7 @@ export class ButtonDirective {
   }
 
   @HostListener('click') onClick(event: Event): void {
-    alert('Aieeeee!!!');
+    this.messageService.notify('Aieeee !!!!', 'danger');
+    event.preventDefault();
   }
 }

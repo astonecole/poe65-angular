@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FlashMessengerService } from '../flash-messenger.service';
+import { ArticlesService } from '../services/articles.service';
+import { Article } from '../models/article.model';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,15 @@ import { FlashMessengerService } from '../flash-messenger.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  articles: Article[] = [];
 
-  constructor(private messageService: FlashMessengerService) { }
+  constructor(private articleService: ArticlesService) { }
 
   ngOnInit(): void {
-    this.messageService.notify('Message depuis notify');
+    this.articleService.getArticles()
+      .subscribe(
+        (data: Article[]) => this.articles = data
+      );
   }
 
 }
