@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FlashMessengerService } from '../flash-messenger.service';
 
 @Component({
   selector: 'app-two-way-databinding',
@@ -8,7 +9,15 @@ import { Component } from '@angular/core';
 export class TwoWayDatabindingComponent {
   country: string = 'France';
 
+  constructor(private messageService: FlashMessengerService) { }
+
   onKeyup(event: any): void {
-    this.country = event.target.value;
+    const value = event.target.value;
+
+    if (value === 'France') {
+      this.messageService.notify(`Pays: ${value}`);
+    }
+
+    this.country = value;
   }
 }
