@@ -12,10 +12,13 @@ export class ArticleFormComponent implements OnInit {
 
   constructor(private articleService: ArticlesService) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.article.title = '';
+    this.article.content = '';
+  }
 
   onSave() {
-    
+
   }
 
 }
