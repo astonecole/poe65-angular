@@ -1,14 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Message } from './message.model';
 import { FlashMessengerService } from '../flash-messenger.service';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-flash-messenger',
   templateUrl: './flash-messenger.component.html',
   styleUrls: ['./flash-messenger.component.scss']
 })
-export class FlashMessengerComponent implements OnInit {
+export class FlashMessengerComponent implements OnInit, AfterViewInit {
   messages: Message[] = [];
   messageService: FlashMessengerService;
 
@@ -16,15 +15,15 @@ export class FlashMessengerComponent implements OnInit {
     this.messageService = messageService;
   }
 
-  ngOnInit(): void {
-    this.messageService.notify('Message depuis notify');
-
+  ngOnInit(): void { }
+  
+  ngAfterViewInit(): void {
     this.messageService.messages$
-      .pipe(tap(value => console.log(value)))
-      .subscribe(
-        (message: Message) => this.messages.push(message),
-        err => console.log(err)
+    .subscribe(
+      (message: Message) => this.messages.push(message),
+      err => console.log(err)
       );
+      this.messageService.notify('hello', 'success');
   }
 
   onClose(pos: number): void {

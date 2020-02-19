@@ -8,7 +8,9 @@ import { Message } from './flash-messenger/message.model';
 export class FlashMessengerService {
   messages$: Subject<Message> = new Subject<Message>();
 
-  constructor() { }
+  constructor() {
+    this.messages$.next(new Message('test', 'success'));
+  }
 
   notify(text: string, type?: string) {
     this.messages$.next(new Message(text, type));
