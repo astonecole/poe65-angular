@@ -1,0 +1,6 @@
+<div *ngFor="let msg of messages; let pos = index" class="alert alert-{{ msg.type }} alert-dismissible fade show" role="alert">
+    {{ msg.text }}
+    <button (click)="onClose(pos)" type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>

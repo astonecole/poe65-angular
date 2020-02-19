@@ -17,6 +17,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DemoComponent } from './demo/demo.component';
 import { ChuckquoteComponent } from './chuckquote/chuckquote.component';
+import { FlashMessengerComponent } from './flash-messenger/flash-messenger.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ChuckquoteComponent } from './chuckquote/chuckquote.component';
     ContactComponent,
     NavbarComponent,
     DemoComponent,
-    ChuckquoteComponent
+    ChuckquoteComponent,
+    FlashMessengerComponent
   ],
   imports: [
     BrowserModule,
