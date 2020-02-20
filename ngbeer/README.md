@@ -7,8 +7,8 @@
 ng generate @angular/material:material-nav components/sidenav
 ```
 
-# Ajouter un dashboard
+### Ajouter un dashboard
 
 ```
-ng generate @angular/material:dashboard dashboard
+ng generate @angular/material:dashboard components/dashboard
 ```
