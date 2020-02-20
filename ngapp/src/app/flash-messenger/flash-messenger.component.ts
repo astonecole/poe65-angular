@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Message } from './message.model';
 import { FlashMessengerService } from '../flash-messenger.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-flash-messenger',
@@ -18,7 +19,10 @@ export class FlashMessengerComponent implements OnInit {
   ngOnInit(): void {
     this.messageService.messages$
       .subscribe(
-        (message: Message) => this.messages.push(message),
+        (message: Message) => {
+          this.messages.push(message);
+          this.clearNotifications();
+        },
         err => console.log(err)
       );
 
@@ -28,4 +32,13 @@ export class FlashMessengerComponent implements OnInit {
   onClose(pos: number): void {
     this.messages.splice(pos, 1);
   }
+
+  clearNotifications(): void {
+    timer(5000).subscribe(
+      () => {
+        this.messages = [];
+      }
+    );
+  }
+
 }
