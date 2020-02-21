@@ -20,6 +20,10 @@ npm i
 ./node_modules/.bin/sequelize db:create
 ```
 
+```sh
+npm run migrate
+```
+
 ### Démarrer le serveur
 
 ```sh
