@@ -27,7 +27,7 @@ npm run migrate
 ### Démarrer le serveur
 
 ```sh
-npm devstart
+npm run devstart
 ```
 
 ## Generer un componsant angular material

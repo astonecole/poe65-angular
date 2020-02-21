@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from 'src/app/models/user.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,11 +10,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  user: UserModel = new UserModel();
   form: FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private userService: UserService,
+    private router: Router
   ) { }
 
   // Regex French Date : ^([0-9]{2}\/){2}[0-9]{4}$
@@ -29,7 +32,19 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.form.value);
+    if (this.form.valid) {
+      const user = this.form.value as UserModel;
+
+      this.userService.save(user)
+        .subscribe(
+          (data: UserModel) => {
+            this.router.navigate(['/']);
+          },
+          (err: Error) => console.log(err),
+          () => console.log('Request has completed')
+        );
+      console.log(this.form.value);
+    }
   }
 
 }
