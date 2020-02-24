@@ -38,7 +38,7 @@ export class AuthService {
   login(email: string, password: string): Observable<UserModel> {
     const value = { email: email, password: password };
 
-    return this.http.post<UserAuth>('http://localhost:3000/users/login', value)
+    return this.http.post<UserAuth>('/users/login', value)
       .pipe(
         tap((data: UserAuth) => console.log(data))
       )

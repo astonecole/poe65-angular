@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
 import { API_URL } from './interceptors/base-url.interceptor';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
 
 // users
 // users/login
@@ -40,6 +41,10 @@ const routes: Routes = [
       useClass: BaseUrlInterceptor,
       multi: true,
       deps: [API_URL]
+    },{
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
     }
   ]
 })

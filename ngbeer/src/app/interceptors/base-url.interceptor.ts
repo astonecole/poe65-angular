@@ -1,4 +1,4 @@
-import { Injectable, InjectionToken } from '@angular/core';
+import { Injectable, InjectionToken, Inject } from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
@@ -12,13 +12,31 @@ export const API_URL = new InjectionToken<string>('apiURL');
 @Injectable()
 export class BaseUrlInterceptor implements HttpInterceptor {
 
-  constructor() { }
+  constructor(
+    @Inject(API_URL) private baseURL: string
+  ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const req = request.clone();
-
-    console.log("API URL", req.url);
-
+    const req = request.clone({
+      url: this.generateURL(request.url)
+    });
     return next.handle(req);
+  }
+
+  /**
+   * https://chucknorris.io/random (asbolute)
+   * /users/signin (relatif)
+   * /users/login (relatif)
+   */
+  public isAbsoluteURL(url: string): boolean {
+    return (/^https?:\/\//i).test(url);
+  }
+
+  public generateURL(url: string): string {
+    if (!this.isAbsoluteURL(url)) {
+      // `${http://localhost:3000}${/users/login}`
+      url = `${this.baseURL}${url}`;
+    }
+    return url;
   }
 }
