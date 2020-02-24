@@ -21,7 +21,7 @@ export class AuthService {
     this.userSubject = new BehaviorSubject<UserModel>(null);
     const data = localStorage.getItem('user_storage');
 
-    if (data !== undefined) {
+    if (data !== "undefined") {
       const user = JSON.parse(data);
 
       this.userSubject.next(user);

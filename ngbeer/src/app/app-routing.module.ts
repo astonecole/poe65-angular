@@ -6,6 +6,11 @@ import { ContactComponent } from './components/contact/contact.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginComponent } from './components/user/login/login.component';
 
+import { environment } from '../environments/environment';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
+import { API_URL } from './interceptors/base-url.interceptor';
+
 // users
 // users/login
 // users/register
@@ -24,6 +29,18 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    {
+      provide: API_URL,
+      useValue: environment.apiURL
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BaseUrlInterceptor,
+      multi: true,
+      deps: [API_URL]
+    }
+  ]
 })
 export class AppRoutingModule { }

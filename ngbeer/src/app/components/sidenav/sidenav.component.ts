@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -19,7 +20,12 @@ export class SidenavComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
   ) { }
 
+  onLogout(): void {
+    this.authService.logout();
+    this.router.navigate(['/'])
+  }
 }
