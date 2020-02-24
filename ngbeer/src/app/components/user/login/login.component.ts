@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
       ).subscribe(
         (data: UserModel) => {
           console.log(data);
+          this.router.navigate(['/']);
         }
       );
 

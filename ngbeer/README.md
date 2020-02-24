@@ -8,6 +8,14 @@
 npm i
 ```
 
+### Ajouter la clé du JWT dans les variables d'environnement
+
+Créer un fichier **.env** à la racine du projet :
+
+```sh
+JWT_KEY="6JD7@HrtHD7&7!ZNbcd@hdnUSnc45sDB7y7cn9@kd$!8"
+```
+
 ### Générer la documentation de l'API
 
 ```sh

@@ -18,11 +18,13 @@ export class AuthService {
   private user$: Observable<UserModel>
 
   constructor(private http: HttpClient) {
+    this.userSubject = new BehaviorSubject<UserModel>(null);
     const data = localStorage.getItem('user_storage');
 
-    if (data) {
+    if (data !== undefined) {
       const user = JSON.parse(data);
-      this.userSubject = new BehaviorSubject<UserModel>(user);
+
+      this.userSubject.next(user);
       this.user$ = this.userSubject.asObservable();
     }
   }
